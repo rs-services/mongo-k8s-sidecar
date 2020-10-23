@@ -35,9 +35,9 @@
     "async": "^1.5.0",
     "forever": "^0.14.1",
     "ip": "^0.3.2",
-    "moment": "^2.10.2",
+    "moment": "^2.29.1",
     "mongodb": "^2.0.28",
-    "node-kubernetes-client": "^0.2.2",
-    "pem": "^1.9.4"
+    "node-kubernetes-client": "^0.3.2",
+    "pem": "^1.14.4"
   }
 }
