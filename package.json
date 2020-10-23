@@ -29,15 +29,16 @@
   "homepage": "https://github.com/cvallance/mongo-k8s-sidecar",
   "devDependencies": {
     "chai": "^2.3.0",
-    "mocha": "^2.2.4"
+    "mocha": "^8.2.0"
   },
   "dependencies": {
     "async": "^1.5.0",
-    "forever": "^0.14.1",
+    "forever": "^3.0.2",
     "ip": "^0.3.2",
     "moment": "^2.29.1",
-    "mongodb": "^2.0.28",
+    "mongodb": "^3.6.2",
     "node-kubernetes-client": "^0.3.2",
-    "pem": "^1.14.4"
+    "pem": "^1.14.4",
+    "pug": "^3.0.0"
   }
 }
