@@ -1,5 +1,4 @@
 var MongoClient = require('mongodb').MongoClient;
-var MongoServer = require('mongodb').Server;
 var async = require('async');
 var config = require('./config');
 
@@ -16,7 +15,11 @@ var getDb = function(host, done) {
     }
   }
 
-  var mongoOptions = {};
+  var mongoOptions = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  };
+
   host = host || localhost;
 
   if (config.mongoSSLEnabled) {
