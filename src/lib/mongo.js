@@ -45,8 +45,8 @@ var getDb = function(host, done) {
 };
 
 var replSetGetConfig = function(db, done) {
-  var adminDb = db.admin();
-  await adminDb.command({ replSetGetConfig: 1 }, {}, function (err, results) {
+  var adminDb = db.db('admin').admin();
+   adminDb.command({ replSetGetConfig: 1 }, {}, function (err, results) {
     if (err) {
       return done(err);
     }
@@ -56,8 +56,8 @@ var replSetGetConfig = function(db, done) {
 };
 
 var replSetGetStatus = function(db, done) {
-  var adminDb = db.admin();
-  await adminDb.command({ replSetGetStatus: {} }, {}, function (err, results) {
+  var adminDb = db.db('admin').admin();
+   adminDb.command({ replSetGetStatus: {} }, {}, function (err, results) {
     if (err) {
       return done(err);
     }
@@ -69,8 +69,8 @@ var replSetGetStatus = function(db, done) {
 var initReplSet = function(db, hostIpAndPort, done) {
   console.log('initReplSet', hostIpAndPort);
 
-  var adminDb = db.admin();
-  await adminDb.command({ replSetInitiate: {} }, {}, function (err) {
+  var adminDb = db.db('admin').admin();
+   adminDb.command({ replSetInitiate: {} }, {}, function (err) {
     if (err) {
       return done(err);
     }
@@ -102,8 +102,8 @@ var replSetReconfig = function(db, rsConfig, force, done) {
 
   rsConfig.version++;
 
-  var adminDb = db.admin();
-  await adminDb.command({ replSetReconfig: rsConfig, force: force }, {}, function (err) {
+  var adminDb = db.db('admin').admin();
+   adminDb.command({ replSetReconfig: rsConfig, force: force }, {}, function (err) {
     if (err) {
       return done(err);
     }
